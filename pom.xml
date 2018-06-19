@@ -11,9 +11,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
-        <deployment.repository.url>http://192.168.2.10:8081/artifactory/rpm-local
-            </deployment.repository.url>
+        <deployment.repository.url>http://192.168.2.10:8081/artifactory/rpm-local</deployment.repository.url>
     </properties>
     <distributionManagement>
         <repository>
@@ -22,6 +20,14 @@
         </repository>
     </distributionManagement>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/file</directory>
+                <includes>
+                    <include>list.txt</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -69,7 +75,6 @@
 						</source>
 					  </sources>
 					</mapping>
-				  </mappings>
                     <mapping>
                       <directory>/usr/local/welcome/hello</directory>
 					  <filemode>755</filemode>
@@ -77,12 +82,12 @@
 					  <groupname>root</groupname>
 					  <sources>
 						<source>
-                            <location>target/classes/file</location>
+                            <location>target/classes/</location>
 						</source>
 					  </sources>
 					</mapping>
-
-				  <preinstallScriptlet>
+				  </mappings>
+                  <preinstallScriptlet>
 					<script>echo "installing ${project.name} now"</script>
 				  </preinstallScriptlet>
 				</configuration>
