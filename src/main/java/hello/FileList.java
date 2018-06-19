@@ -38,6 +38,6 @@ public class FileList{
 	this.list = "Empty";
     }
     public String getList(){
-        return this.getFile("list.txt");
+        return this.getFile("file/list.txt");
     }
 }

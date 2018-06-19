@@ -44,16 +44,17 @@
 				  <execution>
 					<id>generate-rpm</id>
 					<goals>
-					  <goal>attached-rpm</goal>
+					  <goal>rpm</goal>
 					</goals>
 				  </execution>
 				</executions>
 				<configuration>
                     <group>Development/Tools</group>
+                    <prefix>/usr/local</prefix>
 				  <mappings>
 					<mapping>
-					  <directory>/usr/local/temp/kmak</directory>
-					  <filemode>440</filemode>
+					  <directory>/usr/local/welcome</directory>
+					  <filemode>755</filemode>
 					  <username>root</username>
 					  <groupname>root</groupname>
 					  <sources>
@@ -63,6 +64,18 @@
 					  </sources>
 					</mapping>
 				  </mappings>
+                    <mapping>
+                      <directory>/usr/local/welcome/hello</directory>
+					  <filemode>755</filemode>
+					  <username>root</username>
+					  <groupname>root</groupname>
+					  <sources>
+						<source>
+                            <location>target/classes/file</location>
+						</source>
+					  </sources>
+					</mapping>
+
 				  <preinstallScriptlet>
 					<script>echo "installing ${project.name} now"</script>
 				  </preinstallScriptlet>
