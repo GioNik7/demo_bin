@@ -1,4 +1,4 @@
-package hello;
+package music;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
