@@ -3,7 +3,8 @@
     <modelVersion>4.0.1</modelVersion>
 
     <groupId>org.codehub.components</groupId>
-    <artifactId>singer</artifactId>
+    <artifactId>user13</artifactId>
+
     <packaging>jar</packaging>
     <version>0.2.8-SNAPSHOT</version>
 
